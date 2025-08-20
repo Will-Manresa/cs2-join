@@ -3,21 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <title>Unirse al servidor CS2</title>
-  <script>
-    window.onload = function() {
-      // Intenta abrir directamente CS2 y conectar
-      window.location.href = "steam://connect/79.153.141.182:27015";
-      // Si no funciona en 2s, redirige a la tienda
-      setTimeout(function(){
-        if (document.visibilityState === "visible") {
-          window.location.href = "https://store.steampowered.com/app/730/CounterStrike_2/";
-        }
-      }, 2000);
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
     }
-  </script>
+    .card {
+      text-align: center;
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.4);
+      max-width: 500px;
+    }
+    h1 {
+      margin-bottom: 10px;
+      font-size: 22px;
+      color: #fff;
+    }
+    p {
+      margin: 10px 0 20px;
+      color: #cbd5e1;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 12px;
+      background: #22c55e;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .btn:hover {
+      background: #16a34a;
+    }
+    .code {
+      margin-top: 20px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 10px;
+      border-radius: 10px;
+      font-family: monospace;
+      color: #e5e7eb;
+      font-size: 14px;
+    }
+  </style>
 </head>
-<body style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;">
-  <h2>Abriendo Counter-Strike 2...<br>
-  Si no funciona, <a href="https://store.steampowered.com/app/730/CounterStrike_2/">haz clic aquí</a>.</h2>
+<body>
+  <div class="card">
+    <h1>Servidor de Counter-Strike 2</h1>
+    <p>IP: <strong>79.153.141.182:27015</strong></p>
+    <a class="btn" href="steam://connect/79.153.141.182:27015">👉 Abrir Steam y conectar</a>
+    <div class="code">
+      Si no se abre, copia en la consola del juego:<br>
+      <code>connect 79.153.141.182:27015</code>
+    </div>
+  </div>
 </body>
 </html>
