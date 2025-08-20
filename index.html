@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Unirse al servidor CS2</title>
+  <script>
+    window.onload = function() {
+      // Intenta abrir directamente CS2 y conectar
+      window.location.href = "steam://connect/79.153.141.182:27015";
+      // Si no funciona en 2s, redirige a la tienda
+      setTimeout(function(){
+        if (document.visibilityState === "visible") {
+          window.location.href = "https://store.steampowered.com/app/730/CounterStrike_2/";
+        }
+      }, 2000);
+    }
+  </script>
+</head>
+<body style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;">
+  <h2>Abriendo Counter-Strike 2...<br>
+  Si no funciona, <a href="https://store.steampowered.com/app/730/CounterStrike_2/">haz clic aquí</a>.</h2>
+</body>
+</html>
