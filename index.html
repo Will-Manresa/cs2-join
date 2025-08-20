@@ -6,56 +6,28 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: #0f172a;
-      color: #e2e8f0;
-      margin: 0;
+      display: flex; align-items: center; justify-content: center;
+      height: 100vh; background: #0f172a; color: #e2e8f0; margin: 0;
     }
     .card {
-      text-align: center;
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.4);
-      max-width: 500px;
+      text-align: center; background: #1e293b; padding: 30px;
+      border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,.4);
+      max-width: 540px;
     }
-    h1 {
-      margin-bottom: 10px;
-      font-size: 22px;
-      color: #fff;
-    }
-    p {
-      margin: 10px 0 20px;
-      color: #cbd5e1;
-    }
+    h1 { margin: 0 0 10px; font-size: 22px; color: #fff; }
+    p { margin: 10px 0 18px; color: #cbd5e1; }
     .btn {
-      display: block;
-      margin: 10px auto;
-      padding: 14px 24px;
-      border-radius: 12px;
-      background: #22c55e;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-      max-width: 300px;
+      display: block; margin: 10px auto; padding: 14px 24px;
+      border-radius: 12px; background: #22c55e; color: #000;
+      text-decoration: none; font-weight: bold; font-size: 18px; max-width: 320px;
     }
-    .btn:hover {
-      background: #16a34a;
-    }
+    .btn:hover { background: #16a34a; }
     .code {
-      margin-top: 20px;
-      background: #0f172a;
-      border: 1px solid #334155;
-      padding: 10px;
-      border-radius: 10px;
-      font-family: monospace;
-      color: #e5e7eb;
-      font-size: 14px;
+      margin-top: 16px; background: #0f172a; border: 1px solid #334155;
+      padding: 10px; border-radius: 10px; font-family: monospace;
+      color: #e5e7eb; font-size: 14px;
     }
+    .note { font-size: 13px; color: #94a3b8; margin-top: 8px; }
   </style>
 </head>
 <body>
@@ -63,14 +35,18 @@
     <h1>Servidor de Counter-Strike 2</h1>
     <p>IP: <strong>79.153.141.182:27015</strong></p>
 
-    <!-- BOTÓN PRINCIPAL -->
-    <a class="btn" href="steam://run/730//+connect%2079.153.141.182:27015/">👉 Abrir Steam y conectar</a>
+    <!-- BOTÓN PRINCIPAL (run con +connect URL-codificado) -->
+    <a class="btn" href="steam://run/730//%2Bconnect%2079.153.141.182:27015/">👉 Abrir Steam y conectar</a>
 
-    <!-- PLAN B -->
+    <!-- PLAN B: connect “clásico” (puede fallar en algunos Steam) -->
     <a class="btn" href="steam://connect/79.153.141.182:27015">Plan B: usar steam://connect</a>
 
+    <div class="note">
+      Si se abre el juego pero no entra, haz clic en el botón otra vez cuando CS2 ya esté abierto (workaround conocido).
+    </div>
+
     <div class="code">
-      Si no se abre, copia en la consola del juego:<br>
+      Plan C (copia en la consola del juego):<br>
       <code>connect 79.153.141.182:27015</code>
     </div>
   </div>
