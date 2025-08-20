@@ -16,38 +16,20 @@
     }
     h1 { margin:0 0 10px; font-size:22px; color:#fff; }
     p { margin:6px 0 18px; color:#cbd5e1; }
-    .btn {
-      display:block; margin:10px auto; padding:14px 20px; max-width:320px;
-      border-radius:12px; background:#22c55e; color:#0b1b0f; text-decoration:none;
-      font-weight:700; font-size:18px;
-    }
-    .btn.secondary { background:#a78bfa; color:#0b0d1a; }
-    .btn:hover { filter:brightness(0.95); }
-    .note { font-size:13px; color:#94a3b8; margin-top:8px; }
     .code {
       margin-top:14px; background:#0b1220; border:1px solid #334155;
-      padding:10px; border-radius:10px; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      padding:10px; border-radius:10px; font-family:monospace;
       font-size:14px; color:#e5e7eb;
     }
   </style>
   <script>
-    function openCS2() {
-      // Paso 1: abrir CS2
-      window.location.href = "steam://run/730/";
-      // Cambiamos el botón principal para el Paso 2
-      const b1 = document.getElementById('btn1');
-      const b2 = document.getElementById('btn2');
-      b1.textContent = "✅ CS2 abierto. 2) Conectar ahora";
-      b1.onclick = connectNow;
-      b2.style.display = "block";
-      document.getElementById('tip').style.display = "block";
-    }
-    function connectNow() {
-      // Paso 2: conectar al servidor (mejor cuando CS2 ya está abierto)
-      // Usamos run+argumento codificado por si el cliente aplica los args
+    window.onload = function() {
+      // Intento principal: ejecutar CS2 y conectar
       window.location.href = "steam://run/730//%2Bconnect%2079.153.141.182:27015/";
-      // Y además dejamos el clásico como respaldo (algunos clientes lo respetan)
-      setTimeout(function(){ window.location.href = "steam://connect/79.153.141.182:27015"; }, 600);
+      // Respaldo tras 1s (algunos clientes aceptan steam://connect mejor)
+      setTimeout(function(){
+        window.location.href = "steam://connect/79.153.141.182:27015";
+      }, 1000);
     }
   </script>
 </head>
@@ -55,21 +37,9 @@
   <div class="card">
     <h1>Servidor de Counter-Strike 2</h1>
     <p>IP: <strong>79.153.141.182:27015</strong></p>
-
-    <!-- Paso 1: abrir CS2 -->
-    <a id="btn1" class="btn" href="javascript:void(0)" onclick="openCS2()">1) Abrir CS2</a>
-
-    <!-- Paso 2: conectar (aparece tras pulsar el botón de abrir) -->
-    <a id="btn2" class="btn secondary" href="javascript:void(0)" onclick="connectNow()" style="display:none;">
-      2) Conectar ahora
-    </a>
-
-    <div id="tip" class="note" style="display:none;">
-      Si no entra a la primera, pulsa “Conectar ahora” otra vez con CS2 ya abierto.
-    </div>
-
+    <p>Abriendo Steam y conectando automáticamente...</p>
     <div class="code">
-      Plan C (copia en la consola del juego):<br>
+      Si no se abre, copia en la consola del juego:<br>
       <code>connect 79.153.141.182:27015</code>
     </div>
   </div>
